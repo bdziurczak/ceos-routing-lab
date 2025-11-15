@@ -1,0 +1,42 @@
+name: ceos-routing-lab
+prefix: ""
+
+mgmt:
+  network: custom-mgmt-net
+  mtu: 1500
+  ipv4-subnet: 172.100.100.0/24
+  ipv4-range: 172.100.100.128/25
+
+topology:
+  kinds:
+    ceos:
+      image: ceos:4.35.0F
+    linux:
+      image: network-multitool:latest
+  nodes:
+    eos1:
+      kind: ceos
+      startup-config: configs/eos1-startup-config.cfg
+    eos2:
+      kind: ceos
+      startup-config: configs/eos2-startup-config.cfg
+    isp1:
+      kind: ceos
+      startup-config: configs/isp1-startup-config.cfg
+    isp2:
+      kind: ceos
+      startup-config: configs/isp2-startup-config.cfg
+    wan-simulate:
+      kind: linux
+      mgmt-ipv4: 172.100.100.200
+      exec:
+        - echo "admin:admin" | chpasswd
+        - ip address add 203.10.0.1/24 dev eth1
+        - ip address add 203.20.0.1/24 dev eth2
+        - ip route add 10.2.2.0/24 via 203.20.0.113
+        - ip route add 10.1.1.0/24 via 203.10.0.113
+  links:
+    - endpoints: ["eos1:eth1", "isp1:eth1"]
+    - endpoints: ["eos2:eth1", "isp2:eth1"]
+    - endpoints: ["isp1:eth2", "wan-simulate:eth1"]
+    - endpoints: ["isp2:eth2", "wan-simulate:eth2"]
