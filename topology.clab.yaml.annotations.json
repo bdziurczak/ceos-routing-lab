@@ -16,10 +16,22 @@
       }
     },
     {
+      "id": "lan-eos",
+      "icon": "router",
+      "position": {
+        "x": -7,
+        "y": 315
+      },
+      "geoCoordinates": {
+        "lat": 48.684826888402256,
+        "lng": 9.107895390625677
+      }
+    },
+    {
       "id": "eos2",
       "icon": "router",
       "position": {
-        "x": 287,
+        "x": 259,
         "y": 287
       },
       "geoCoordinates": {
@@ -31,8 +43,8 @@
       "id": "isp1",
       "icon": "router",
       "position": {
-        "x": 105,
-        "y": 203
+        "x": 91,
+        "y": 287
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
@@ -43,8 +55,8 @@
       "id": "isp2",
       "icon": "router",
       "position": {
-        "x": 231,
-        "y": 217
+        "x": 203,
+        "y": 287
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
@@ -55,8 +67,8 @@
       "id": "wan-simulate",
       "icon": "router",
       "position": {
-        "x": 175,
-        "y": 133
+        "x": 147,
+        "y": 245
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,

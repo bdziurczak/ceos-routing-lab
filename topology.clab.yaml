@@ -17,6 +17,9 @@ topology:
     eos1:
       kind: arista_ceos
       startup-config: configs/eos1-startup-config.cfg
+    lan-eos:
+      kind: arista_ceos
+      startup-config: configs/lan-eos-startup-config.cfg
     eos2:
       kind: arista_ceos
       startup-config: configs/eos2-startup-config.cfg
@@ -40,10 +43,9 @@ topology:
         - sudo iptables -A FORWARD -d 203.20.0.0/24 -j ACCEPT
         - sudo iptables -A FORWARD -p tcp --dport 179 -s 203.10.0.113 -d 203.20.0.113 -j ACCEPT
         - sudo iptables -A FORWARD -p tcp --dport 179 -s 203.20.0.113 -d 203.10.0.113 -j ACCEPT
-
-
   links:
     - endpoints: ["eos1:eth1", "isp1:eth1"]
     - endpoints: ["eos2:eth1", "isp2:eth1"]
     - endpoints: ["isp1:eth2", "wan-simulate:eth1"]
     - endpoints: ["isp2:eth2", "wan-simulate:eth2"]
+    - endpoints: ["eos1:eth2", "lan-eos:eth1"]
