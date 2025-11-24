@@ -31,9 +31,18 @@ for node in nodes:
             'password': 'admin'
            }
         ])
+
+commands = [
+    'show ip route | begin Gateway',
+    'ping 112.112.115.1', #ping eos2
+    'ping 112.112.114.1', #ping eos1
+    'ping 192.168.150.129' #ping eos1 lan interface
+]        
 for dev in ceos_devices:
+    print('*******************************************')
     print(f'Connecting to {dev[0]}')
     net_connect = ConnectHandler(**dev[1])
-    output = net_connect.send_command("show ip route")
+    output = net_connect.send_multiline(commands)
     print(output)
     net_connect.disconnect()
+    print('*******************************************')
