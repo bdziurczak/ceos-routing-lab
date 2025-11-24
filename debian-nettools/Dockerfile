@@ -1,4 +1,4 @@
-FROM debian:stable-slim
+FROM debian:stable
 
 # Install networking and utility packages
 RUN apt-get update && apt-get install -y \
@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     sudo \
     passwd \
     iputils-ping \
+    dhcpcd-base \
     bash \
     && rm -rf /var/lib/apt/lists/*
 
