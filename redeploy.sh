@@ -4,5 +4,7 @@ runningps=$(docker ps -a -q)
 if [[ -n "$runningps" ]]; then
     docker kill $runningps
 fi
-clab destroy -ac
+yes | clab destroy -ac
 clab deploy
+python3 ./netmiko/ceos_test.py
+clab inspect 

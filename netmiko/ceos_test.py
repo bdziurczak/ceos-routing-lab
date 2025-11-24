@@ -1,3 +1,4 @@
+#!../.venv/bin/python
 import json
 from pathlib import Path
 import subprocess
