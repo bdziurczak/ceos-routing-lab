@@ -6,13 +6,14 @@ RUN apt-get update && apt-get install -y \
     sudo \
     passwd \
     iputils-ping \
+    isc-dhcp-client \
+    ifupdown \
     dhcpcd-base \
     bash \
     && rm -rf /var/lib/apt/lists/*
 
 # Make /usr/local/bin ready for scripts
 RUN mkdir -p /usr/local/bin && chmod 755 /usr/local/bin
-
 # Default user and working directory
 USER root
 WORKDIR /root

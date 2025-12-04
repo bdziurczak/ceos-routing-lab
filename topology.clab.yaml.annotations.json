@@ -16,18 +16,6 @@
       }
     },
     {
-      "id": "lan-eos",
-      "icon": "router",
-      "position": {
-        "x": -7,
-        "y": 315
-      },
-      "geoCoordinates": {
-        "lat": 48.684826888402256,
-        "lng": 9.107895390625677
-      }
-    },
-    {
       "id": "eos2",
       "icon": "router",
       "position": {
@@ -73,6 +61,42 @@
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
+      }
+    },
+    {
+      "id": "lan-eos",
+      "icon": "router",
+      "position": {
+        "x": -7,
+        "y": 315
+      },
+      "geoCoordinates": {
+        "lat": 48.684826888402256,
+        "lng": 9.107895390625677
+      }
+    },
+    {
+      "id": "lan-pc1",
+      "icon": "router",
+      "position": {
+        "x": -77,
+        "y": 343
+      },
+      "geoCoordinates": {
+        "lat": 48.684826888402256,
+        "lng": 9.124562057292344
+      }
+    },
+    {
+      "id": "lan-pc2",
+      "icon": "router",
+      "position": {
+        "x": -91,
+        "y": 301
+      },
+      "geoCoordinates": {
+        "lat": 48.88482688840226,
+        "lng": 9.324562057292345
       }
     }
   ]

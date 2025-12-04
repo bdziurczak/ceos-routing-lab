@@ -15,5 +15,5 @@ sysctl -w net.ipv4.ip_forward=1
 iptables -P FORWARD ACCEPT #Because this linux machine works as WAN simulator, its not a firewall
 
 #adding latency, jitter, packet loss
-tc qdisc add dev eth1 root netem delay 40ms 5ms loss 3%
-tc qdisc add dev eth2 root netem delay 40ms 5ms loss 3%
+tc qdisc add dev eth1 root netem delay 10ms 5ms loss 3%
+tc qdisc add dev eth2 root netem delay 10ms 5ms loss 3%
