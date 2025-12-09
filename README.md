@@ -59,8 +59,4 @@ containerlab destroy -t topology.clab.yaml
 - To persist additional files on a node, place them under `clab-ceos-routing-lab/<node>/flash/` (containerlab bind-mounts these into the node container).
 - If you change the topology, update `topology.clab.yaml` and redeploy.
 
-**Automation & experiments**
-- Use the Ansible inventory: `ansible -i clab-ceos-routing-lab/ansible-inventory.yml all -m command -a "show version"` (adjust module/command to your needs).
-- Use `netmiko/ceos_test.py` as a starting point for Python-based automation.
-
 
