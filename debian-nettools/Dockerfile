@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     iputils-ping \
     isc-dhcp-client \
     ifupdown \
+    traceroute \
     dhcpcd-base \
     bash \
     && rm -rf /var/lib/apt/lists/*

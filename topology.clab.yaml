@@ -38,12 +38,22 @@ topology:
       startup-config: configs/lan-eos-startup-config.cfg
     lan-pc1:
       kind: linux
+      stages:
+        create: 
+          wait-for: 
+            - node: lan-eos
+              stage: configure
       binds:
           - configs/lan-pc1-setup.sh:/usr/local/bin/lan-pc1-setup.sh
       exec:
           - /usr/local/bin/lan-pc1-setup.sh 
     lan-pc2:
       kind: linux
+      stages:
+        create: 
+          wait-for: 
+            - node: lan-eos
+              stage: configure
       binds:
           - configs/lan-pc2-setup.sh:/usr/local/bin/lan-pc2-setup.sh
       exec:
